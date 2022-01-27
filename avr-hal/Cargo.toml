@@ -1,0 +1,43 @@
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+
+[workspace]
+members = [
+    # The generic hal definitions
+    "avr-hal-generic",
+
+    # MCU HAL crates
+    "mcu/atmega-hal",
+    "mcu/attiny-hal",
+
+    # Higher level crates
+    "arduino-hal",
+
+    # Examples
+    "examples/arduino-diecimila",
+    "examples/arduino-leonardo",
+    "examples/arduino-mega2560",
+    "examples/arduino-nano",
+    "examples/arduino-uno",
+    "examples/nano168",
+    "examples/sparkfun-promicro",
+    "examples/trinket-pro",
+    "examples/trinket",
+]
+exclude = [
+    # The RAVEDUDE! Yeah!
+    "ravedude",
+]
+
+[patch.crates-io]
+# XXX: Temporary fix for avr-rust/rust#148
+ufmt = { git = "https://github.com/Rahix/ufmt.git", rev = "12225dc1678e42fecb0e8635bf80f501e24817d9" }
