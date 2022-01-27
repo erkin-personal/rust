@@ -15,3 +15,5 @@ traits to define behaviour on data
 
 
 There is a fast-growing ecosystem of available libraries through Cargo but here we will concentrate on the core principles of the language by learning to use the standard library. My advice is to write lots of small programs, so learning to use rustc directly is a core skill. When doing the examples in this tutorial I defined a little script called rrun which does a compilation and runs the result:
+
+avr-hal is a repo for using Rust on controlling Arduino UNO..
